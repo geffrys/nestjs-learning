@@ -1,0 +1,16 @@
+version: '3.7'
+
+services:
+  task-db-mongo:
+    image: mongo:latest
+    container_name: mongo-db
+    ports:
+      - "27019:27017"
+    volumes:
+      - ./data:/data/db
+    networks:
+      - mongo-network
+networks:
+  mongo-network:
+    driver: bridge
+    
